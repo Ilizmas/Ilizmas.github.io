@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<title>ThInd4.0  Маслова Елизавета Павловна</title>
+</head>
+<body>
+<table
+border="1"
+align="center"
+rules="rows"
+style="width:60%;">
+<tr>
+<td>
+
+
+
+<table
+border="1"
+bgcolor="#87CEFA"
+cellpadding="10"
+style="width:100%; border-radius:5px;">
+
+<tr>
+
+<th>
+<h1>ThInd4.0</h1>
+<h3>Маслова Елизавета Павловна</h3>
+</th>
+</tr>
+</table>
+
+
+<table
+border="1"
+bgcolor="#ADD8E6"
+cellpadding="10"
+style="width:100%; border-radius:5px;">
+<tr>
+<td
+rowspan="2"
+style="width:80%">
+<h2>Страница</h2>
+<p style="text-indent:40px">
+Этот сайт создан в рамках предмета "Технология индустрии 4.0"
+Группы АДБ-21-07
+Направление - 15.03.04 Автоматизация технологических процессов и производств </p>
+
+<p style="text-indent:20px">
+Теперь посмотрите на несчастного кота</p>
+
+<img src="D:\Papka\kit.jpg">
+
+</td>
+
+<td bgcolor="#e6e6fa">
+<h3>Меню</h3>
+<p>
+<a href="">
+<span >Купить кота</span></a>
+</p>
+<p>
+<a href="">
+<span >Продать кота</span;></a>
+</p>
+<p>
+<a href="">
+<span>Отправить в подвал</span></a>
+</p>
+</td>
+</tr>
+<tr>
+<td
+bgcolor="#e6e6fa"
+align="center">
+<h3>Общая информация</h3>
+<p>Текст общей информации или реклама</p>
+</td>
+</tr>
+</table>
+
+<table
+border="1"
+bgcolor="#7FFFD4"
+height="100"
+cellpadding="10"
+style="width:100%; border-radius:5px;">
+
+<tr>
+<th>
+<h3>Подвал</h3>
+</th>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</main>
+
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>My title</title>
+        <link rel="stylesheet" type="text/css" href="main.css">
+    </head>
+
+    <body>
+        <div class="main">
+            <h2>JavaScript Confirm Box</h2>
+            <button class="btn" onclick="myFunction()">Обновить данные</button>
+            <ul id="demo">
+
+            </ul>
+        </div>
+        <script>
+            function sleep(ms) {
+                return new Promise(resolve => setTimeout(resolve, ms));
+            }
+            function myFunction() {
+                (async () => {
+                    let response = await fetch('https://kav-api.kovalev.team/servodrive/lastActualData?servoDriveId=1');
+                    let el = document.getElementById('demo')
+                    el.innerHTML = ""
+                    let text = await response.text(); // прочитать тело ответа как текст
+                    for (const [key, value] of Object.entries(JSON.parse(text)[0])) {
+                        const newEl = document.createElement("li")
+                        newEl.appendChild(document.createTextNode(`${key}: ${value}`))
+                        el.appendChild(newEl)
+                        await sleep(100)
+                    }
+                })()
+            }
+            for (let i=0; i<5; i++){
+              myFunction();
+            }
+        </script>
+
+    </body>
+
+</body>
+</html>
