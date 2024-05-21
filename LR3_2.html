@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<h2>Взаимодействие с пользователем</h2>
+</head>
+<body>
+	<script>
+		if (confirm('Доброго времени суток, у этой страницы есть к вам вопрос, вы готовы ответить?')){
+			var name = prompt('Как вас зовут?', 'Введите сюда ваше имя');
+			alert("Ваше имя - " + name);
+		}
+		alert("Спасибо, что уделили время");
+
+		var admin, name;
+
+		//Записываем в name строку с именем
+		name = "Елизавета";
+
+		//Копируем значение из name в admin
+		admin = name;
+
+		//Выводим admin
+		alert("Значение admin: " + admin);
+		document.getElementById('res').textContent = "admin: " + admin;
+		
+	</script>
+	</body>
+<body>
+<h2><button onclick="window.location.href = 'index.html';">Назад</button></h2>
+</body>
+</html>

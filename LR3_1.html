@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<little><i>Какое из чисел максимально?</i></little>
+</head>
+<body>
+	<h5>Найдем максимум двух чисел</h5>
+	<input type="number" id="n1">
+    <b>
+        <label1 for = "n1">-первое число</label1>
+    </b>
+	<br>
+	<input type="number" id="n2">
+	<b>
+        <label for="n2">-второе число</label>
+    </b>
+	<br>
+	<br>
+	<h1>
+		<button onclick="findMax()">Вычислить</button>
+		<br>
+		<p id="otvet"></p>
+	</h1>
+
+	<script>
+		function findMax(){
+
+			var n1 = document.getElementById('n1').value;
+			var n2 = document.getElementById('n2').value;
+
+			var maxN = Math.max(n1, n2);
+
+			document.getElementById('otvet').textContent = "Максимальное число: " + maxN;
+		}
+	</script>
+</body>
+<body>
+<h2><button onclick="window.location.href = 'index.html';">Назад</button></h2>
+</body>
+</html>
